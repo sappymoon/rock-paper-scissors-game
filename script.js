@@ -4,7 +4,20 @@ function computerSelection(){
     return computerSelection;
 }
 
-function playerSelection(playerChoice){
+function playerSelection(){
+    while(true){
+        let playerSelection = prompt("Please enter rock, paper, or scissors: ")
+
+        playerSelection = playerSelection.toLowerCase();
+
+            if (['rock', 'paper', 'scissors'].indexOf(playerSelection) > -1){
+                return playerSelection;
+                break;
+            }
+            else {
+                alert("Please enter a valid input.");
+            }
+    }
 
 }
 
@@ -17,3 +30,4 @@ function game(){
 }
 
 console.log(computerSelection());
+console.log(playerSelection());
