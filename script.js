@@ -64,8 +64,30 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++){
+        let result = playRound(playerSelection(),computerSelection());
+
+            if (result == 'win'){
+                playerScore++;
+            }
+            else if (result == 'loss'){
+                computerScore++;
+            }
+    }
+
+    if (playerScore == computerScore){
+        alert("You tied " + playerScore + "-" + computerScore + ".");
+    }
+    else if (playerScore < computerScore){
+        alert("You lost " + playerScore + "-" + computerScore + ".");
+    }
+    else if (playerScore > computerScore){
+        alert("You won " + playerScore + "-" + computerScore + ".");
+    }
 
 }
 
-result = playRound('rock', 'scissors');
-alert(result);
+game();
