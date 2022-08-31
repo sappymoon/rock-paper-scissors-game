@@ -12,7 +12,6 @@ function playerSelection(){
 
             if (['rock', 'paper', 'scissors'].indexOf(playerSelection) > -1){
                 return playerSelection;
-                break;
             }
             else {
                 alert("Please enter a valid input.");
@@ -22,6 +21,45 @@ function playerSelection(){
 }
 
 function playRound(playerSelection, computerSelection){
+    let result = '';
+
+    if (playerSelection == computerSelection){
+        alert("Tie! The computer chose " + computerSelection + ".")
+        result = 'tie';
+        return result;
+    }
+    else if (playerSelection == 'rock' && computerSelection == 'paper'){
+        alert("You lose! The computer chose " + computerSelection + ".")
+        result = 'loss';
+        return result;
+    }
+    else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+        alert("You win! The computer chose " + computerSelection + ".")
+        result = 'win';
+        return result;
+    }
+    else if (playerSelection == 'paper' && computerSelection == 'scissors'){
+        alert("You lose! The computer chose " + computerSelection + ".")
+        result = 'loss';
+        return result;
+    }
+    else if (playerSelection == 'paper' && computerSelection == 'rock'){
+        alert("You win! The computer chose " + computerSelection + ".")
+        result = 'win';
+        return result;
+    }
+    else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+        alert("You lose! The computer chose " + computerSelection + ".")
+        result = 'loss';
+        return result;
+    }
+    else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+        alert("You win! The computer chose " + computerSelection + ".")
+        result = 'win';
+        return result;
+    }
+    
+    
 
 }
 
@@ -29,5 +67,5 @@ function game(){
 
 }
 
-console.log(computerSelection());
-console.log(playerSelection());
+result = playRound('rock', 'scissors');
+alert(result);
