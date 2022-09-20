@@ -47,8 +47,6 @@ function playRound(playerChoice){
 
 }
 
-//UI stuff
-
 function startGame(){
     const choices = document.querySelectorAll('button');
     choices.forEach((button) =>
