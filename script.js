@@ -56,10 +56,12 @@ function startGame(){
         let reset = trackScore(playRound(button.id));
 
         if(reset == 'player'){
-            alert("You won the game!")
+            let gameWinner = document.getElementById('game-result');
+            gameWinner.textContent = 'You won the game!';
         }
         if(reset == 'computer'){
-            alert("You lost the game!")
+            let gameWinner = document.getElementById('game-result');
+            gameWinner.textContent = 'You lost the game!';
         }
     }));
 }
